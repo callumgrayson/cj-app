@@ -4,16 +4,20 @@ import ImportData from "../ImportData/ImportData";
 import CreateData from "../CreateData/CreateData";
 import AccessServer from "../AccessServer/AccessServer";
 import LocalStorage from "../LocalStorage/LocalStorage";
+import Bitwise from "../Bitwise/Bitwise";
+import SVGExperiments from "../SVGExperiments/SVGExperiments";
 
 const components = {
   ImportData,
   CreateData,
   AccessServer,
   LocalStorage,
+  Bitwise,
+  SVGExperiments,
 };
 
 function App() {
-  const [view, setView] = useState("ImportData");
+  const [view, setView] = useState("Bitwise");
 
   const C = components[view];
   return (

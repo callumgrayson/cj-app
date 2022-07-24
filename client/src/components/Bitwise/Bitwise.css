@@ -1,0 +1,9 @@
+.graph-bitwise {
+  border: 1px solid blue;
+  min-height: 36px;
+  max-height: 36px;
+}
+
+.width-100 {
+  width: 100%;
+}

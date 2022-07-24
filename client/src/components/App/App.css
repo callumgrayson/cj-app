@@ -25,7 +25,18 @@ td {
 .justify-center {
   justify-content: center;
 }
+.justify-around {
+  justify-content: space-around;
+}
 
 .align-center {
   align-items: center;
+}
+
+.flip-x {
+  transform: rotateX(180deg);
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
