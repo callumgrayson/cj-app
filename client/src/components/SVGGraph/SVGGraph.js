@@ -7,27 +7,31 @@ function SVGGraph({
   range,
   domain,
   points,
+  showXAxis = true,
+  showYAxis = true,
   scaleX,
-  // scaleY,
-  showXAxis,
-  // showYAxis,
-  // displayWidth,
-  displayHeight,
+  scaleY,
+  className = "",
 }) {
   return (
     <svg
-      height={displayHeight}
+      height={height}
       width={width}
       viewBox={`${domain[0]} ${range[0]} ${width} ${height}`}
-      className="svg-graph-container"
+      className={`svg-graph-container ${className}`}
       preserveAspectRatio="none"
     >
-      <g stroke="red" fill="none" strokeWidth={`${scaleX}`}>
+      <g stroke="red" fill="none" strokeWidth={`${scaleX / 2}px`}>
         <path d={points} />
       </g>
       {showXAxis ? (
-        <g stroke="lightgray" fill="none" strokeWidth="0.1px">
+        <g stroke="black" fill="none" strokeWidth={`${scaleY}px`}>
           <path d={`M${domain[0]},0 L${domain[1]},0`} />
+        </g>
+      ) : null}
+      {showYAxis ? (
+        <g stroke="black" fill="none" strokeWidth={`${scaleY}px`}>
+          <path d={`M0,${range[0]} L0,${range[1]}`} />
         </g>
       ) : null}
     </svg>

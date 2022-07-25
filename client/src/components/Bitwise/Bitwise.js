@@ -1,6 +1,6 @@
 import { useState } from "react";
-// import GraphBitwise from "./GraphBitwise";
 import SVGGraphColumns from "../SVGGraph/SVGGraphColumns";
+import "./Bitwise.css";
 
 const options = {
   not: {
@@ -40,12 +40,28 @@ const options = {
   },
 };
 
+function getNumber(n) {
+  return Number(n ? n : 0);
+}
+
 function Bitwise() {
-  const [nBasis, setNumber] = useState(3);
-  const nBasis_number = Number(nBasis);
+  const [nBasis, setNBasis] = useState("-3");
+  const [nBasisNumber, setnBasisNumber] = useState(getNumber(nBasis));
+  const nBasis_number = nBasisNumber;
 
   function handleNumberChange(e) {
-    setNumber(e.target.value);
+    setNBasis(e.target.value);
+    if (e.target.value === "" || isNaN(Number(e.target.value))) {
+      return;
+    }
+    setnBasisNumber(getNumber(e.target.value));
+  }
+
+  function incDec(e) {
+    const value = e.target.value;
+    const newN = Number(nBasis) + Number(value);
+    setNBasis((Number(nBasis) + Number(value)).toString());
+    setnBasisNumber(getNumber(newN));
   }
 
   const domain = 36;
@@ -56,6 +72,12 @@ function Bitwise() {
   return (
     <div className="bitwise">
       <input type="text" onChange={handleNumberChange} value={nBasis} />
+      <button onClick={incDec} value="-1">
+        -
+      </button>
+      <button onClick={incDec} value="1">
+        +
+      </button>
       <div className="flex-row justify-around">
         {Object.keys(options).map((optKey, idxOpt) => {
           const optVal = options[optKey];
@@ -63,7 +85,7 @@ function Bitwise() {
             return optVal.fn(a, nBasis_number);
           });
           return (
-            <div key={optKey} className="width-100">
+            <div key={optKey} className="min-width-fit">
               <div>
                 {numbersIterable.map((startN, idx) => {
                   return (
@@ -74,19 +96,12 @@ function Bitwise() {
                   );
                 })}
               </div>
-              <div
-                style={{
-                  width: "100%",
-                  height: "50px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  // position: "relative",
-                  // border: "1px solid gold",
-                  marginTop: "10px",
-                }}
-              >
-                <SVGGraphColumns dataList={dataList} />
+              <div className="bitwise-graph-box">
+                <SVGGraphColumns
+                  dataList={dataList}
+                  showXAxis={true}
+                  showYAxis={false}
+                />
               </div>
             </div>
           );

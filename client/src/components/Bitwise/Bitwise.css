@@ -4,6 +4,15 @@
   max-height: 36px;
 }
 
-.width-100 {
-  width: 100%;
+.min-width-fit {
+  min-width: fit-content;
+}
+
+.bitwise-graph-box {
+  width: auto;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }

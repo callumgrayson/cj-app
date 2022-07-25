@@ -1,4 +1,5 @@
 .svg-graph-container {
   /* border: 1px solid lightgray; */
   transform: rotateX(180deg);
+  height: 100%;
 }
