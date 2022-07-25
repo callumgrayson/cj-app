@@ -36,9 +36,7 @@ function App() {
         })}
       </div>
       <hr />
-      <div>
-        <C />
-      </div>
+      <C />
     </div>
   );
 }

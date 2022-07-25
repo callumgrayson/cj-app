@@ -1,3 +1,8 @@
+.bitwise {
+  width: 100%;
+  overflow: hidden;
+}
+
 .graph-bitwise {
   border: 1px solid blue;
   min-height: 36px;
@@ -15,4 +20,9 @@
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+}
+
+.bitwise-columns-box {
+  gap: 20px;
+  padding: 20px;
 }

@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .view-button.selected {
@@ -39,4 +44,12 @@ td {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.width-100 {
+  width: 100%;
 }
