@@ -18,6 +18,7 @@ function AccessServer() {
 
   return (
     <div>
+      <h5>Send some text and the server will send it back jumbled</h5>
       <form onSubmit={handleSendText}>
         <input type="text" onChange={handleTextChange} value={text} />
         <button type="submit">Go</button>

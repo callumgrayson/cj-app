@@ -6,7 +6,7 @@ import RadioInput from "../RadioInput/RadioInput";
 import { separatorTypes, sortDirections } from "../../constants";
 import { clamp, getPreviewArray } from "../../helpers";
 import useSort from "../../hooks/useSort";
-import "./ImportData.css";
+import "./TableData.css";
 
 const previewRowsCount = 5;
 const shift = Math.floor(previewRowsCount / 2);
@@ -28,7 +28,7 @@ const initialFileData = {
   rows: [],
 };
 
-function ImportData() {
+function TableData() {
   const [fileData, setFileData] = useState(initialFileData);
   const [previewIndex, setPreviewIndex] = useState(1);
   const [previewRows, setPreviewRows] = useState(null);
@@ -162,4 +162,4 @@ function ImportData() {
   );
 }
 
-export default ImportData;
+export default TableData;

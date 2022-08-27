@@ -1,23 +1,27 @@
 import { useState } from "react";
 import "./App.css";
-import ImportData from "../ImportData/ImportData";
+import TableData from "../TableData/TableData";
 import CreateData from "../CreateData/CreateData";
 import AccessServer from "../AccessServer/AccessServer";
 import LocalStorage from "../LocalStorage/LocalStorage";
 import Bitwise from "../Bitwise/Bitwise";
-import SVGExperiments from "../SVGExperiments/SVGExperiments";
+import WavViewer from "../WavViewer/WavViewer";
+import Scraper from "../Scraper/Scraper";
+// import SVGExperiments from "../SVGExperiments/SVGExperiments";
 
 const components = {
-  ImportData,
+  TableData,
   CreateData,
   AccessServer,
   LocalStorage,
   Bitwise,
-  SVGExperiments,
+  WavViewer,
+  Scraper,
+  // SVGExperiments,
 };
 
 function App() {
-  const [view, setView] = useState("Bitwise");
+  const [view, setView] = useState("Scraper");
 
   const C = components[view];
   return (
